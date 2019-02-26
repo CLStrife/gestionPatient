@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GestionPatientMVC.Models.Patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des patients</h2>
+
+<p>
+    @Html.ActionLink("Ajouter un patient", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ville)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pays)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prenom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ville)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pays)
+        </td>
+        <td>
+            @Html.ActionLink("Modifier", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Fiche", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id = item.Id }) |
+            @Html.ActionLink("Les visites", "Index", "Visite", new { id = item.Id }, null)
+        </td>
+    </tr>
+}
+
+</table>

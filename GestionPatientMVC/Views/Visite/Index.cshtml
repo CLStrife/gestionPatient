@@ -1,0 +1,52 @@
+﻿@model IEnumerable<GestionPatientMVC.Models.Visite>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des visites</h2>
+
+<p>
+    @Html.ActionLink("Ajouter une visite", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateVisite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPatient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeVisite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeureVisite)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateVisite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPatient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeVisite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeureVisite)
+        </td>
+        <td>
+            @Html.ActionLink("Modifier la visite", "Edit", new { id = item.Id, idPatient = item.IdPatient }) |
+            @Html.ActionLink("Détails", "Details", new { id = item.Id, idPatient = item.IdPatient }) |
+            @Html.ActionLink("Effacer", "Delete", new { id = item.Id })|
+            @Html.ActionLink("Les ordonnances", "Index", "Ordonnance", new { id = item.Id }, null)
+        </td>
+    </tr>
+}
+
+</table>

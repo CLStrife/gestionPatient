@@ -1,0 +1,42 @@
+﻿@model GestionPatientMVC.Models.Ordonnance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Détails ordonnance</h2>
+
+<div>
+    <h4>Ordonnance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePrescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePrescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LesMedics)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LesMedics)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

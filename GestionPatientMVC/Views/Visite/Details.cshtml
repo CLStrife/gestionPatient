@@ -1,0 +1,50 @@
+﻿@model GestionPatientMVC.Models.Visite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Détails de la visite</h2>
+
+<div>
+    <h4>Visite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeVisite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateVisite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeureVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeureVisite)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier la visite", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index", new { id= Model.IdPatient })
+</p>

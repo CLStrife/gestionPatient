@@ -1,0 +1,56 @@
+﻿@model GestionPatientMVC.Models.Visite
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer la visite</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Visite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeVisite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateVisite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeureVisite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeureVisite)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", new { id = Model.IdPatient })
+        </div>
+    }
+</div>
